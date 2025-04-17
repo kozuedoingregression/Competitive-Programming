@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 #define ll long long int
 #define vi vector<int>
@@ -10,35 +9,48 @@ using namespace std;
 
 void solve()
 {
-								int n;
-								cin>>n;
-								while(n--){
-																ll x;
-																cin>>x;
-																ll sq = sqrt(x);
-																auto fx = [&]()->int{
-																								for(ll i = 2; i*i <= sq ;i++){
-																																if (sq%i == 0) return 0;
-																								}
-																								return 1;
-																};
+    int n,m; cin>>n>>m;
+    vector<vector<int>> av(n,vector<int>(m));
+    priority_queue<int>q;
 
-																string ans = (sq*sq == x && fx() && sq!=1)?"YES":"NO";
-																cout<<ans<<endl;
-								}
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            cin>>av[i][j];
+            q.push(av[i][j]);
+        }
+    }
+    int a,b;
+    while(!q.empty())
+    {
+        int ele=q.top();
+        q.pop();
+        a=ele;
+        while(q.top()==a){
+            q.pop();
+        }
+        b=q.top();
+        break;
+    }
+    cout<<__gcd(a,b)<<endl;
+
+
 
 }
 
 int main()
 {
 
-								ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+	ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+	int t;
+	cin>>t;
+
+	while(t--) solve();
 
 
-								solve();
 
-
-
-								return 0;
+	return 0;
 }
 

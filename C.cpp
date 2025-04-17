@@ -1,28 +1,56 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define ll long long 
 
 void solve()
 {
-								int n,h,m;
-								cin>>n;
-								map<int,int>mp;
+    string s; cin>> s;
+    string ans;
+    for(int i=0;i< s.length;i++)
+    {
+        if(s[i] == 'u' && s[i+1] == 's')
+        {
+            
+        }
+    }
+    /* int n; cin>>n;
+    vector<int> vi(n);
+    for(auto &i:vi) cin>>i;
+    int max_hight = vi[0], max_left = 0;
+   
+    for(int i=1;i<n;i++)
+    {
+        if(vi[i] > max_hight)
+        {
+            max_hight = vi[i];
+            max_left = i;
+        }
 
-								for(int i =0; i<n;i++)
-								{
-																cin>>h>>m;
-																int tmp=h*60+m;
-																mp[tmp]++;
-								}
+    }
+    int min_hight = vi[0], min_right=0;
+    for(int i=1;i<n;i++)
+    {
+        if(vi[i] <= min_hight)
+        {
+            min_hight = vi[i];
+            min_right = i;
+        }
+    }
 
-								int i=0,ans=1;
-								for(auto ele:mp){
-																ans=max(ans,ele.second);
-								}
-								cout<<ans<<endl;
+    int ans = max_left + (n - 1 - min_right);
+    if(max_left > min_right) ans--;
 
+    cout<<ans<<endl;*/
 }
 
-int main()
-{	solve(); 
-								return 0;
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);
+
+    int t; cin>>t;
+    while(t--) solve();
+    solve();
+    //cout<<"hello"<<endl;
+
+    return 0;
 }
